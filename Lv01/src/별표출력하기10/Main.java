@@ -6,45 +6,63 @@ public class Main {
 		Solution sol = new Solution();
 		String answer = "";
 		
-		int n = 4;
-		int cnt = 1;
-		int num = 1;
+		int n = 3;
+		int even = 1;
+		int odd = 1;
 		
 		for (int i = 1; i <= n; i++) {
 			if(i%2==0) {
 				// Â¦¼ö (--)
-				for (int j = num; j <= n; j++) {
+				for (int j = even; j <= n; j++) {
 					System.out.print("*"+" ");
 				}
-				System.out.println("num++");
-				num++;
+				even++;
 				System.out.println(" ");
 			}else {
 				// È¦¼ö (++)
-				for (int k = 1; k <= cnt; k++) {
+				for (int k = 1; k <= odd; k++) {
 					System.out.print("*"+" ");
 				}
-				System.out.println("cnt++");
-				cnt++;
+				odd++;
 				System.out.println(" ");
 			}
 		}
 		
 		for (int i = 1; i <= n; i++) {
-			if(i%2==1) {
-				// Â¦¼ö (--)
-				for (int j = num; j <= n; j++) {
-					System.out.print("*"+" ");
+			if(n%2==1) {
+				if(i%2==0) {
+					// Â¦¼ö (--)
+					even--;
+					for (int j = even; j <= n; j++) {
+						System.out.print("*"+" ");
+					}
+					System.out.println(" ");
+				}else {
+					// È¦¼ö (++)
+					odd--;
+					for (int k = 1; k <= odd; k++) {
+						System.out.print("*"+" ");
+					}
+					
+					System.out.println(" ");
 				}
-				num--;
-				System.out.println(" ");
 			}else {
-				// È¦¼ö (++)
-				for (int k = 1; k <= cnt; k++) {
-					System.out.print("*"+" ");
+				if(i%2==0) {
+					// Â¦¼ö (--)
+					odd--;
+					for (int k = 1; k <= odd; k++) {
+						System.out.print("*"+" ");
+					}
+					
+					System.out.println(" ");
+				}else {
+					// È¦¼ö (++)
+					even--;
+					for (int j = even; j <= n; j++) {
+						System.out.print("*"+" ");
+					}
+					System.out.println(" ");
 				}
-				cnt--;
-				System.out.println(" ");
 			}
 		}
 		
